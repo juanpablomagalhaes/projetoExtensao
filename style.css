@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fontes: Corpo com Source Sans Pro e títulos com Playfair Display */
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fefefe;
+}
+
+/* Animação fade-in para elementos */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header com fundo sutil e padding */
+header {
+  text-align: center;
+  padding: 20px 0;
+}
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+#psi {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+/* Navigation sticky com fundo branco e sombra sutil */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 15px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto 25px;
+}
+
+/* Ícone hamburger (apenas em telas pequenas) */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Menu principal */
+#nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+  font-size: 1rem;
+}
+#nav-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+  padding: 5px 10px;
+  transition: color 0.3s, transform 0.3s;
+}
+#nav-menu li a:hover {
+  color: #777;
+  transform: scale(1.05);
+}
+#nav-menu li.socials {
+  margin-left: 30px;
+}
+#nav-menu li.socials a {
+  font-size: 0.9rem;
+  color: rgb(80,67,67);
+}
+
+/* Responsividade para o menu em telas pequenas */
+@media (max-width: 480px) {
+  .hamburger {
+    display: block;
+  }
+  #nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    border-top: 1px solid #ddd;
+    z-index: 100;
+  }
+  #nav-menu.show {
+    display: flex;
+  }
+  #nav-menu li {
+    text-align: center;
+    padding: 10px 0;
+  }
+}
+
+/* Intro Phrase */
+#intro-phrase {
+  text-align: center;
+  margin: 25px auto;
+  width: 90%;
+  max-width: 800px;
+}
+#intro-phrase h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+/* Gallery: grid com imagens com mesmo tamanho, bordas e efeito hover */
+#gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin: 25px auto;
+  width: 90%;
+  max-width: 1200px;
+}
+.gallery-item {
+  width: 250px;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Cards Section: layout em grid, com sombra e bordas arredondadas */
+#cards-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 25px auto;
+  width: 90%;
+  max-width: 1200px;
+}
+.card {
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Main Content */
+#main-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 40px auto;
+  width: 90%;
+  max-width: 1200px;
+  gap: 20px;
+  text-align: center;
+}
+.text-content,
+.video-content {
+  flex: 1 1 500px;
+}
+.text-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.text-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Footer */
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+footer h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+/* Correção no nav do footer para remover a caixa branca */
+footer nav {
+  background: transparent;
+  border: none;
+  padding: 0;
+  width: auto;
+  max-width: none;
+  margin: 0;
+}
+footer nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  gap: 15px;
+}
+footer nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+footer nav ul li a:hover {
+  color: #ccc;
+}
+
+/* Botão Scroll To Top */
+#scrollToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+  transition: background 0.3s;
+}
+#scrollToTop:hover {
+  background: #333;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+  #psi {
+    font-size: 1.2rem;
+  }
+  nav ul {
+    font-size: 0.9rem;
+    gap: 15px;
+  }
+  #intro-phrase h2 {
+    font-size: 1.8rem;
+  }
+  #gallery-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .gallery-item {
+    width: 200px;
+    height: 280px;
+  }
+  #cards-section {
+    grid-template-columns: 1fr;
+  }
+  .card h3 {
+    font-size: 1.3rem;
+  }
+  .card p {
+    font-size: 0.9rem;
+  }
+  .text-content h2 {
+    font-size: 1.8rem;
+  }
+  .text-content p {
+    font-size: 0.9rem;
+  }
+  footer h2 {
+    font-size: 2rem;
+  }
+  footer nav ul li a {
+    font-size: 0.9rem;
+  }
+}
